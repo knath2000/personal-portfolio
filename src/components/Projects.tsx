@@ -48,7 +48,7 @@ export default function Projects() {
               <Image src={p.img} alt={p.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" priority={idx===0} />
             </div>
             <div className="p-4">
-              <h3 className="font-medium">{p.title}</h3>
+              <h3 className="font-medium glass-text">{p.title}</h3>
               <p className="mt-1 text-sm opacity-80">{p.desc}</p>
             </div>
             <div className="px-4 pb-4 flex flex-wrap gap-2 text-sm">

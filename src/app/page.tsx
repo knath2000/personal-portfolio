@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <Background3DClient />
       <main className="relative z-10 min-h-screen p-6">
-        <section id="home" className="mx-auto flex min-h-[60vh] items-center justify-center">
+        <section id="home" className="mx-auto flex min-h-[60vh] items-center justify-center" aria-label="Home">
           <HeroCard />
         </section>
         <Projects />
