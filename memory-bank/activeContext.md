@@ -9,10 +9,13 @@ Current focus:
 
 Next steps:
 - Code-split heavier sections when adding gallery/sections.
-- Add Framer Motion entrance transitions w/ reduced-motion guards.
 - Optimize images via next/image and proper sizes.
-- Add active route highlighting for URL hash changes; smooth scroll.
 - Consider WebGPU detection & fallback strategy later.
+
+Completed this session:
+- Added motion variants to About/Contact with reduced-motion guards.
+- Implemented URL hash sync + back/forward handling; smooth scrolling already enabled in CSS.
+- Improved image LCP with fetchPriority for primary visuals.
 
 Decisions:
 - Default to WebGL; consider WebGPU later with runtime detection and fallback.

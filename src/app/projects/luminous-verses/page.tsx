@@ -56,8 +56,8 @@ export default function LuminousVersesPage() {
           { src: "/projects/luminous-verses/read-view.jpg", alt: "Reading view" },
         ].map((s, i) => (
           <div key={i} className="glass-panel p-4">
-            <div className="relative h-48 w-full">
-              <Image src={s.src} alt={s.alt} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-contain" priority={i === 0} />
+          <div className="relative h-48 w-full">
+            <Image src={s.src} alt={s.alt} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-contain" priority={i === 0} fetchPriority={i===0?"high":"auto"} />
             </div>
           </div>
         ))}

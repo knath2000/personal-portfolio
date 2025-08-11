@@ -45,7 +45,7 @@ export default function Projects() {
             className="glass-panel p-0 overflow-hidden hover:bg-white/15 transition"
           >
             <div className="relative aspect-[16/9] w-full">
-              <Image src={p.img} alt={p.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" priority={idx===0} />
+              <Image src={p.img} alt={p.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" priority={idx===0} fetchPriority={idx===0?"high":"auto"} />
             </div>
             <div className="p-4">
               <h3 className="font-medium glass-text">{p.title}</h3>

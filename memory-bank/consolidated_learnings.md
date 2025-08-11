@@ -23,3 +23,18 @@
 
 ## Tooling
 - Use pnpm user-local prefix to avoid sudo; set `packageManager` in package.json for consistency.
+
+## Lighthouse & Perf Tuning Patterns
+- Idle-load heavy client features (R3F background) with `requestIdleCallback` and skip entirely on low-spec/reduced-motion.
+- Prioritize LCP images with `next/image` `priority` and consider `fetchPriority="high"` to improve LCP discovery.
+- Configure Next `images.formats` to include AVIF/WebP; set long-term cache headers for static assets.
+- Use TanStack Query provider only where needed; keep server components for static shells to minimize client JS.
+
+## Section Tracking & URL Hash Sync
+- Track sections with IntersectionObserver (threshold ~0.5 mobile, 0.7 desktop). When active section changes, update URL with `history.replaceState(null, "", `#${active}`)` to avoid stacking history or triggering jumps. Listen for `hashchange` to reflect back/forward navigation in UI.
+
+## Motion Variants (Reduced Motion Safe)
+- Gate motion with `useReducedMotion()`. Use small translate/opacity variants and `viewport={{ once: true, amount: 0.3 }}` for in-view sections. Keep durations shorter on low-spec devices.
+
+## Image LCP Priority
+- For leading hero/project images, set `priority` and `fetchPriority="high"` with accurate `sizes` for better LCP.

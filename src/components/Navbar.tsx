@@ -16,6 +16,34 @@ export default function Navbar() {
 
   useSectionObserver(setActive)
 
+  // Sync initial hash, back/forward hash navigation, and keep URL hash updated with current section
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const initial = window.location.hash.slice(1)
+    if (initial) setActive(initial)
+
+    const onHashChange = () => {
+      const id = window.location.hash.slice(1) || "home"
+      setActive(id)
+    }
+    window.addEventListener("hashchange", onHashChange)
+    return () => window.removeEventListener("hashchange", onHashChange)
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    // Only write hash for non-home sections; remove stale hash when returning to home
+    if (active === "home") {
+      if (window.location.hash) {
+        const url = window.location.pathname + window.location.search
+        history.replaceState(null, "", url)
+      }
+      return
+    }
+    const nextHash = `#${active}`
+    if (window.location.hash !== nextHash) history.replaceState(null, "", nextHash)
+  }, [active])
+
   const style = useMemo(() => {
     type NavVars = CSSProperties & Record<'--navbar-blur' | '--navbar-alpha' | '--navbar-border' | '--navbar-shadow', string>
     const vars: NavVars = {
