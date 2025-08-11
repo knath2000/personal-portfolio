@@ -30,6 +30,11 @@
 - Configure Next `images.formats` to include AVIF/WebP; set long-term cache headers for static assets.
 - Use TanStack Query provider only where needed; keep server components for static shells to minimize client JS.
 
+## MRAH (Modular Rendering & Adaptive Hydration)
+- Segment UI into server-rendered modules; hydrate only interactive islands on visibility or interaction.
+- Gate heavy client modules (R3F, motion-heavy sections) by viewport + `requestIdleCallback`.
+- Replace global providers at root with per-page or per-section providers to cut landing route JS.
+
 ## Section Tracking & URL Hash Sync
 - Track sections with IntersectionObserver (threshold ~0.5 mobile, 0.7 desktop). When active section changes, update URL with `history.replaceState(null, "", `#${active}`)` to avoid stacking history or triggering jumps. Listen for `hashchange` to reflect back/forward navigation in UI.
 

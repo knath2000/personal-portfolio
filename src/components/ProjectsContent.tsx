@@ -24,6 +24,15 @@ const PROJECTS: Project[] = [
     live: "https://luminous-verses.vercel.app",
     github: "https://github.com/knath2000/luminous-verses",
   },
+  {
+    id: "yt-lyrics-front",
+    title: "YT Lyrics",
+    desc: "YouTube lyrics viewer with search and synced scrolling.",
+    img: "/window.svg",
+    href: "/projects/yt-lyrics-front",
+    live: "https://yt-lyrics-front.vercel.app",
+    github: "https://github.com/knath2000/yt-lyrics-front",
+  },
   { id: "p2", title: "3D Product View", desc: "Interactive 3D product explorer with bloom.", img: "/vercel.svg" },
   { id: "p3", title: "Motion Cards", desc: "Framer Motion micro-interactions and gestures.", img: "/globe.svg" },
 ]
