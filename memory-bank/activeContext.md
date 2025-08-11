@@ -8,6 +8,8 @@ Current focus:
 - Added Projects, About, Contact sections; applied animated gradient backdrop and glass tokens.
 
 Next steps:
+- Verify Vercel deployment performance metrics (Vercel Analytics, Lighthouse).
+- Ensure env var GITHUB_TOKEN is set in Vercel for /api/github (optional for higher rate limits).
 - Code-split heavier sections when adding gallery/sections.
 - Optimize images via next/image and proper sizes.
 - Consider WebGPU detection & fallback strategy later.
@@ -16,6 +18,7 @@ Completed this session:
 - Added motion variants to About/Contact with reduced-motion guards.
 - Implemented URL hash sync + back/forward handling; smooth scrolling already enabled in CSS.
 - Improved image LCP with fetchPriority for primary visuals.
+- Pushed latest changes to GitHub (origin/main); Vercel auto-deploy triggered for main.
 
 Decisions:
 - Default to WebGL; consider WebGPU later with runtime detection and fallback.

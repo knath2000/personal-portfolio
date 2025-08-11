@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   experimental: {
     webpackMemoryOptimizations: true,
+    optimizeCss: true,
   },
   images: {
     formats: ["image/avif", "image/webp"],

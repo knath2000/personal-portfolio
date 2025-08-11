@@ -38,3 +38,6 @@
 
 ## Image LCP Priority
 - For leading hero/project images, set `priority` and `fetchPriority="high"` with accurate `sizes` for better LCP.
+
+## Deployment Workflow
+- Use GitHub main branch auto-deployed to Vercel; pushing to main triggers build/deploy. Monitor via Vercel dashboard and validate performance with Vercel Analytics/Lighthouse.

@@ -13,8 +13,10 @@
 - Motion variants added for About/Contact with reduced-motion guards.
 - URL hash sync implemented with back/forward handling; updates hash on section changes without stacking history.
 - Image fetchPriority set for lead images to improve LCP.
+ - Pushed latest changes to GitHub; Vercel deployment triggered for main.
 
 Pending:
+- Verify Vercel performance metrics (Analytics) and run Lighthouse on live deploy.
 - Add content sections and further image optimization (fine-tune sizes/alt text).
 - Refine accessibility (keyboard focus outlines, landmarks, aria-current consistency).
 - Code-split heavier future sections when gallery expands.

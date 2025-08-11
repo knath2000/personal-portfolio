@@ -14,6 +14,7 @@ Difficulties:
 Successes:
 - Clean build after changes with green lint.
 - Smooth URL hash sync and back/forward navigation now reflected in active nav state.
+- Deployment: Pushed to GitHub main and confirmed Vercel auto-deploy trigger.
 
 Improvements_Identified_For_Consolidation:
 - Pattern: Section tracking + URL hash sync with replaceState and hashchange listener.
