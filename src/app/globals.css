@@ -84,6 +84,11 @@ section[id] { scroll-margin-top: var(--nav-h); }
   100% { background-position: 100% 50%; }
 }
 
+/* CSS-driven nav underline and lightweight hero fade-in */
+.nav-underline { background: linear-gradient(90deg, #22d3ee, #3b82f6, #6366f1); transition: opacity 200ms ease; }
+.fade-in { opacity: 0; transform: translateY(12px); transition: opacity 360ms ease, transform 360ms ease; }
+.fade-in.is-visible { opacity: 1; transform: translateY(0); }
+
 /* Reduced motion & contrast fallbacks */
 @media (prefers-reduced-motion: reduce) {
   .animated-bg { animation: none !important; background-position: 50% 50% !important; }

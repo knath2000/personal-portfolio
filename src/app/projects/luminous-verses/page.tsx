@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import QueryProvider from "@/components/QueryProvider"
 import Image from "next/image"
 import { usePerformance } from "@/components/PerformanceProvider"
 import { motion, useReducedMotion } from "framer-motion"
@@ -10,6 +11,7 @@ export default function LuminousVersesPage() {
   const { lowSpec } = usePerformance()
   const reduce = useReducedMotion()
   return (
+    <QueryProvider>
     <div className="relative min-h-screen p-6">
       <header className="mx-auto max-w-4xl">
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Luminous Verses</h1>
@@ -63,6 +65,7 @@ export default function LuminousVersesPage() {
         ))}
       </section>
     </div>
+    </QueryProvider>
   )
 }
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react"
-import { motion, useReducedMotion } from "framer-motion"
+import { useReducedMotion } from "framer-motion"
 
 const LINKS = [
   { id: "home", label: "Home" },
@@ -12,7 +12,7 @@ const LINKS = [
 
 export default function Navbar() {
   const [active, setActive] = useState<string>("home")
-  const reduce = useReducedMotion()
+  useReducedMotion()
 
   useSectionObserver(setActive)
 
@@ -74,10 +74,9 @@ export default function Navbar() {
                 {link.label}
               </a>
               {active === link.id && (
-                <motion.div
-                  layoutId="nav-underline"
-                  className="absolute left-1 right-1 -bottom-[2px] h-[3px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600"
-                  transition={reduce ? { type: false } : { type: "spring", stiffness: 380, damping: 30, mass: 0.6 }}
+                <div
+                  className="nav-underline absolute left-1 right-1 -bottom-[2px] h-[3px] rounded-full"
+                  aria-hidden
                 />
               )}
             </li>
